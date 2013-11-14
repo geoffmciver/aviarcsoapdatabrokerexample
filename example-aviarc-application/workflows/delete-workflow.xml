@@ -1,0 +1,16 @@
+<workflow url="/delete-example">
+
+    <dataset name="test-store" databroker="example-service" query="exampleOperationReturningComplexType">
+        <param name="arg0" value="it does not matter right now (this should be foo)"/>
+    </dataset>
+    
+    
+    <mark-row-deleted dataset="test-store" />
+    
+    <atomic-commit>
+        <dataset name="test-store" />
+    </atomic-commit>
+    
+    <show-screen name="done" />
+    
+</workflow>

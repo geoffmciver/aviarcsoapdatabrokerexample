@@ -1,0 +1,20 @@
+<workflow url="/create-example">
+
+    <dataset name="test-store" databroker="example-service"/>
+    <create-row dataset="test-store" />
+    
+    <set-field field="test-store.bar" value="this is bar" />
+    <set-field field="test-store.date" value="2011-01-18T11:53:04.114+13:00" />
+    <set-field field="test-store.foo" value="this is foo" />
+    <set-field field="test-store.number" value="0987654321" />
+    
+    
+    <mark-row-created dataset="test-store" />
+    
+    <atomic-commit>
+        <dataset name="test-store" />
+    </atomic-commit>
+    
+    <show-screen name="done" />
+    
+</workflow>

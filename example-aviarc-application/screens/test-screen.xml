@@ -1,0 +1,22 @@
+<screen xmlns:action="urn:aviarc:widget:com.aviarc.toronto.widget.core.action:1" 
+        xmlns:app="urn:aviarc:widget:application">
+    <text-static height="26" width="512" left="71" top="17" text="{$test.return}" />
+    <line height="13" width="1220" left="57" top="58" />
+     text-static height="26" width="32" left="145" top="120" text="bar :" />
+    <text-static height="26" width="100" left="185" top="122" text="{$test-complex.bar}" />
+    <text-static height="26" width="43" left="146" top="163" text="date : " />
+    <text-static height="16" width="212" left="192" top="164" text="{$test-complex.date}" />
+    <text-static height="26" width="72" left="144" top="191" text="foo (arg0) :" />
+    <text-static height="16" width="279" left="218" top="190" text="{$test-complex.foo}" />
+    <text-static height="26" width="60" left="143" top="225" text="number :" />
+    <text-static height="26" width="100" left="222" top="226" text="{$test-complex.number}" />
+    <line height="13" width="1220" left="52" top="256" />
+    <record-table height="219" width="1052" left="124" top="300" dataset="test-complex-list">
+        <column display-field="bar" />
+        <column display-field="date" />
+        <column display-field="foo" />
+        <column display-field="number" />
+    </record-table> 
+    
+
+</screen>

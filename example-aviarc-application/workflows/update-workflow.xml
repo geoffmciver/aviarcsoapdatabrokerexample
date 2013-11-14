@@ -1,0 +1,21 @@
+<workflow url="/update-example">
+
+    <dataset name="test-store" databroker="example-service" query="exampleOperationReturningComplexType">
+        <param name="arg0" value="it does not matter right now (this should be foo)"/>
+    </dataset>
+    
+    <set-field field="test-store.bar" value="this isdfsdfsdfsdfs bar" />
+    <set-field field="test-store.date" value="2011-01-18T11:53:04.114+13:00" />
+    <set-field field="test-store.foo" value="this is dddddddd" />
+    <set-field field="test-store.number" value="0987654321" />
+    
+    
+    <mark-row-updated dataset="test-store" />
+    
+    <atomic-commit>
+        <dataset name="test-store" />
+    </atomic-commit>
+    
+    <show-screen name="done" />
+    
+</workflow>

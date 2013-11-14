@@ -1,0 +1,40 @@
+<databroker factory-class="com.aviarc.framework.databroker.soap.SoapDatabrokerFactoryImpl" datasource="example-service">
+
+    <operation name="exampleOperation" input-transform="transforms/exampleOperation-input.xsl" output-transform="transforms/exampleOperation-output.xsl">
+        <parameters>
+            <parameter name="arg0" />
+        </parameters>
+    </operation>    
+    
+    <operation name="exampleOperationReturningComplexType"
+         input-transform="transforms/exampleOperationReturningComplexType-input.xsl"
+         output-transform="transforms/exampleOperationReturningComplexType-output.xsl">
+        <parameters>
+            <parameter name="arg0" />
+        </parameters>
+    </operation>
+    
+    <operation name="exampleOperationReturningListComplexType"
+         input-transform="transforms/exampleOperationReturningListComplexType-input.xsl"
+         output-transform="transforms/exampleOperationReturningListComplexType-output.xsl">
+        <parameters>
+            <parameter name="arg0" />
+        </parameters>
+    </operation>
+    
+    
+ 
+    <store-dataset-changes>
+        <update operation="exampleUpdate"
+             transform="transforms/store/updateExample-transform.xsl" 
+             error-transform="transforms/store/error/store-error-transform.xsl" />
+ 
+        <create operation="exampleCreate" 
+                transform="transforms/store/createExample-transform.xsl" 
+                error-transform="transforms/store/error/store-error-transform.xsl" />
+ 
+        <delete operation="exampleDelete" 
+                transform="transforms/store/deleteExample-transform.xsl" 
+                error-transform="transforms/store/error/store-error-transform.xsl" />
+    </store-dataset-changes>
+</databroker>

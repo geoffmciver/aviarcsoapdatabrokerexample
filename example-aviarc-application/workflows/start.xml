@@ -1,0 +1,21 @@
+<workflow>
+
+    <dataset name="test" databroker="example-service" query="exampleOperation">
+        <param name="arg0" value="I cannot believe its SOAP"/>
+    </dataset>
+    
+    <dataset name="test-complex" databroker="example-service" query="exampleOperationReturningComplexType">
+         <param name="arg0" value="passed argument for complex type"/>
+    </dataset>
+    
+    
+    <dataset name="test-complex-list" databroker="example-service" query="exampleOperationReturningListComplexType">
+        <param name="arg0" value="passed argument for complex type list"/>
+    </dataset>
+    
+    
+    <show-screen name="test-screen" />
+
+
+    
+</workflow>
