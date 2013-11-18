@@ -1,0 +1,61 @@
+<databroker datasource="salesforce-service" factory-class="com.aviarc.framework.databroker.soap.SoapDatabrokerFactoryImpl">
+
+	<operation name="login" input-transform="transforms/login-input.xsl" output-transform="transforms/login-output.xsl"/>
+	
+	<!-- all parameters (mandatory or not) must be listed here -->
+	
+	<operation
+		name="create-account"
+		input-transform="transforms/create-account-input.xsl"
+		output-transform="transforms/create-account-output.xsl">
+		<parameters>
+			<parameter name="session" mandatory="y"/>
+			<parameter name="name" mandatory="y"/>
+		</parameters>
+	</operation>
+	
+	<operation
+		name="update-account"
+		input-transform="transforms/update-account-input.xsl"
+		output-transform="transforms/update-account-output.xsl">
+		<parameters>
+			<parameter name="session" mandatory="y"/>
+			<parameter name="id" mandatory="y"/>
+			<parameter name="name" mandatory="n"/>
+		</parameters>
+	</operation>
+	
+	<operation
+		name="create-contact"
+		input-transform="transforms/create-contact-input.xsl"
+		output-transform="transforms/create-contact-output.xsl">
+		<parameters>
+			<parameter name="session" mandatory="y"/>
+			<parameter name="accountid" mandatory="y"/>
+			<parameter name="lastname" mandatory="y"/>
+			<parameter name="firstname" mandatory="n"/>
+		</parameters>
+	</operation>
+	
+	<operation
+		name="update-contact"
+		input-transform="transforms/update-contact-input.xsl"
+		output-transform="transforms/update-contact-output.xsl">
+		<parameters>
+			<parameter name="session" mandatory="y"/>
+			<parameter name="id" mandatory="y"/>
+			<parameter name="lastname" mandatory="n"/>
+			<parameter name="firstname" mandatory="n"/>
+		</parameters>
+	</operation>
+	
+	<operation
+		name="delete-contact"
+		input-transform="transforms/delete-contact-input.xsl"
+		output-transform="transforms/delete-contact-output.xsl">
+		<parameters>
+			<parameter name="session" mandatory="y"/>
+			<parameter name="id" mandatory="y"/>
+		</parameters>
+	</operation>
+</databroker>
